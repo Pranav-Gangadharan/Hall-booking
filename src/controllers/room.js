@@ -60,6 +60,8 @@ const bookRoom = (req, res) => {
       start_time,
       end_time,
       room_id,
+      booking_date: new Date(),
+      booking_status: 'confirmed',
     };
 
     bookings.push(newBooking);
@@ -139,8 +141,8 @@ const bookedCount = (req, res) => {
         start_time: booking.start_time,
         end_time: booking.end_time,
         booking_id: booking.id,
-        booking_date: booking.booking_date, // Assuming you have a 'booking_date' property
-        booking_status: booking.booking_status, // Assuming you have a 'booking_status' property
+        booking_date: booking.booking_date, 
+        booking_status: booking.booking_status, 
       };
     });
 
